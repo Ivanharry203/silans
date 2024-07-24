@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SILANS</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('body1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+        header {
+            background-color: #e94646;
+            color: #fff;
+            text-align: center;
+            padding: 40px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            border-bottom: 4px solid #e94646;
+            display: flex; 
+            align-items: center;
+        }
+        nav a {
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            position: relative;
+            top: 40px;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .content {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 24px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        .content .slider-container {
+            overflow: hidden;
+            width: 100%;
+        }
+        .content .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .content .slide {
+            flex: 0 0 auto;
+            width: 100%;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+        .logo-text {
+            float: left;
+            color: #080808;
+            padding: 20px;
+            font-size: 20px;
+        }
+        .border-at img {
+            width: 60px;
+            height: auto;
+        }
+        .dropdown {
+            margin: 20px 0;
+            padding: 10px;
+            font-size: 18px;
+        }
+        .contact-list {
+            font-size: 18px;
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .team-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .team-member {
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            width: 150px;
+            transition: transform 0.3s;
+        }
+        .team-member img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .team-member:hover {
+            transform: scale(1.1);
+        }
+        .team-member h3 {
+            margin: 10px 0 5px;
+            font-size: 18px;
+        }
+        .team-member p {
+            font-size: 14px;
+            color: #777;
+        }
+        .contact-section {
+            background-color: #ffffff;
+            color: #fff;
+            padding: 80px 0;
+        }
+        .contact-section h1,
+        .contact-section p,
+        .contact-section .dropdown {
+            color: #f46c6c;
+        }
+        .contact-section .dropdown {
+            background-color: #333;
+            color: #fff;
+            border: none;
+        }
+        .social-media-section {
+            background-color: #fbfbfb;
+            color: #000;
+            padding: 40px 0;
+        }
+        .social-media-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .social-media-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .social-media-links a {
+            color: #000;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        .social-media-links a img {
+            margin-right: 10px;
+            width: 32px;
+            height: 32px;
+        }
+        .social-media-links a:hover {
+            color: #e94646;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>SILANS</h1>
+            <p>"Kami hadir dengan kelengkapan nomor ambulans di wilayah anda"</p>
+        </div>
+    </header>
+    <nav>
+        <div class="border-at">
+            <div class="logo-text"> 
+                <img src="logo.png" alt="Logo">
+            </div>
+            <a href="#tentang">Tentang Kami</a>
+            <a href="#klmp">Kontak Layanan</a>
+            <a href="#media">Tim Kami</a>
+        </div>
+    </nav>
+    <div class="content" id="tentang">
+        <div class="container">
+            <h1>Tentang SILANS</h1>
+            <div class="slider-container">
+                <div class="slider">
+                    <img class="slide" src="supir2.jpg" alt="Gambar">
+                    <img class="slide" src="supir1.jpg" alt="Gambar">
+                </div>
+            </div>
+            <p style="color: #fbfbfb;">SILANS adalah solusi lengkap untuk layanan ambulans di wilayah Kota Magelang. SILANS menyediakan layanan nomor ambulans lengkap sesuai wilayah tempat tinggal anda di kota Magelang.</p>
+        </div>
+    </div>
+    <div class="content contact-section" id="klmp">
+        <div class="container">
+            <h1>Kontak Layanan</h1>
+            <select class="dropdown" id="districtSelect" onchange="updateContactList()">
+                <option value="">Pilih Kecamatan</option>
+                <option value="Magelang Utara">Magelang Utara</option>
+                <option value="Magelang Selatan">Magelang Selatan</option>
+                <option value="Magelang Tengah">Magelang Tengah</option>
+            </select>
+            <div id="contactList" class="contact-list">
+            </div>
+        </div>
+    </div>
+    <div class="content" id="media">
+        <div class="container">
+            <h1>Tim Kami</h1>
+            <div class="team-section">
+                <div class="team-member">
+                    <img src="indah.jpg" alt="Team Member">
+                    <h3>indah</h3>
+                </div>
+                <div class="team-member">
+                    <img src="asq.jpg" alt="Team Member">
+                    <h3>asqia</h3>
+                </div>
+                <div class="team-member">
+                    <img src="devan.jpg" alt="Team Member">
+                    <h3>devan</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="social-media-section">
+        <div class="container">
+            <h4 style="position: relative;left: 500px;">Informasi Sosial Media</h4>
+            <div class="social-media-links">
+                <a href="https://youtube.com/@silansdarurat?si=bp-WREEBZOpCoJyi" target="_blank">
+                    <img src="twt.png" alt="Twitter">
+                </a>
+                <a href="https://www.instagram.com/silans.darurat?igsh=NDk1NjR4MDFiMW5" target="_blank">
+                    <img src="inst.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const contactData = {
+            "Magelang Utara": [
+                "Puskesmas Magelang Utara: 0822-5783-4444",
+                "Yayasan Ambulans Laziz Magelang: 0815-5329-123",
+                "Yayasan Ambulans El Shadai Magelang: 0857-4171-7777",
+                
+            ],
+            "Magelang Selatan": [
+                "Disnakes : 0857-4855-5555",
+                "PMI Kota Magelang : 0293-7500-111",
+                "LazisNU Magelang : 0813-2944-4442",
+                "Senkom Magelang:0815-7888-112",
+                "RSUD Tidar Kota Magelang:r:0293-3622-60",
+                "Rumah Sakit Harapan Kota Magelang:: 0293-3640-34"
+
+            ],
+            "Magelang Tengah": [
+                "Klinik Bhayangkara Medika : 0812-2836-7667",
+                "Klinik Pratama dr.H.M.Syaiful Anwar : 0293-3222-22",
+                "PSC 119 Kota Magelang :085-84-85-77-000"
+            ]
+        };
+
+        function updateContactList() {
+            const district = document.getElementById('districtSelect').value;
+            const contactListDiv = document.getElementById('contactList');
+            contactListDiv.innerHTML = '';
+
+            if (district && contactData[district]) {
+                const contacts = contactData[district].map(contact => `<p>${contact}</p>`).join('');
+                contactListDiv.innerHTML = contacts;
+            }
+        }
+
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides.forEach(slide => {
+                slide.style.transform = `translateX(-${n * 100}%)`;
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 2000);
+    </script>
+</body>
+</html>
